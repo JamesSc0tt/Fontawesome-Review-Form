@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Easy Review Form</title>
+		<!-- Bootstrap for design -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!-- jQuery cause I'm lazy -->
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<!-- Script for form -->
+			<script src="farf.js"></script> 
+		<!-- Style colours hovered stars -->
+			<style>
+				.fa-star-o {
+					color: #212529;
+					cursor: pointer;
+				}
+				.fa-star {
+					color: #FFD700;
+					cursor: pointer;
+				}
+			</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="card" style="margin-top:15px;">
+				<div class="card-body">
+					<h5 class="text-dark">Submit A Review</h5>
+					<p class="text-secondary">We pride ourselves on being there when you need us most. Your honest feedback helps our team improve.</p>
+					<div class="star-area">
+						<h1>
+							<i class="fa fa-star-o" aria-hidden="true" id="star_review" data-number="1"></i>
+							<i class="fa fa-star-o" aria-hidden="true" id="star_review" data-number="2"></i>
+							<i class="fa fa-star-o" aria-hidden="true" id="star_review" data-number="3"></i>
+							<i class="fa fa-star-o" aria-hidden="true" id="star_review" data-number="4"></i>
+							<i class="fa fa-star-o" aria-hidden="true" id="star_review" data-number="5"></i>
+						</h1>
+					</div>
+					<div class="review-area" style="display:none;">
+						<form>
+							<input type="hidden" name="ticketID" value="<?php echo $ticket['t_id'] ?>">
+							<input type="hidden" name="stars" id="star_input" value="0">
+							<textarea class="form-control" rows="3" style="resize: none"></textarea>
+							<span class="float-right" style="margin-top:15px;line-height:35px;">
+								<span id="stars_confirm">
+								</span>
+								<button class="btn btn-success float-right" type="submit" style="margin-left:20px;">Submit</button>
+							</span>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
